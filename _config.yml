@@ -46,7 +46,7 @@ deploy:
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }} [skip ci]"
 
-root: /newblog/
+root: /newblog
 permalink: :title/
 permalink_defaults: 
 
