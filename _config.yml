@@ -25,9 +25,9 @@ root_tag_generator:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://jpspsupport.github.io/newblog/
+url: https://jpspsupport.github.io/blog/
 github:
-  url: https://github.com/jpspsupport/newblog/
+  url: https://github.com/jpspsupport/blog/
   posts_dir: articles
   default_branch: main
 
@@ -42,11 +42,11 @@ skip_render:
 ## Docs: https://hexo.io/doc  s/deployment.html
 deploy:
   type: git
-  repo: git@github.com:jpspsupport/newblog.git
+  repo: git@github.com:jpspsupport/blog.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }} [skip ci]"
 
-root: /newblog
+root: /blog
 permalink: :title/
 permalink_defaults: 
 
