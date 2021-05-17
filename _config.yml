@@ -2,30 +2,32 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Title (display)
-title: Japan CSS Support Example Blog
-# Sub Title (display)
-subtitle: Japan CSS Support Example Blog
-# Description
-description: Japan CSS Support Example Blog
+# ブログのタイトル
+title: Japan SharePoint Support Blog
 
-# Keywords
+# サブタイトル
+subtitle: 日本マイクロソフトの SharePoint に関するサポート情報のブログです。
+description: 日本マイクロソフトの SharePoint に関するサポート情報のブログです。
 keywords:
-  - Information
+  - SharePoint Online
+  - SharePoint Server
+  - OneDrive for Business
 
-author: CSS Japan
+author: SharePoint Support Japan
 
 # Tag (hexo helper)
 root_tag_generator:
   root_tag_names:
-    - Information
+    - SharePoint Online
+    - SharePoint Server
+    - OneDrive for Business
   sub_tag_limit: 20
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://cssjpn.github.io/example-blog/
+url: https://jpspsupport.github.io/newblog/
 github:
-  url: https://github.com/cssjpn/blog-example/
+  url: https://github.com/jpspsupport/newblog/
   posts_dir: articles
   default_branch: main
 
@@ -40,11 +42,11 @@ skip_render:
 ## Docs: https://hexo.io/doc  s/deployment.html
 deploy:
   type: git
-  repo: git@github.com:cssjpn/blog-example.git
+  repo: git@github.com:jpspsupport/newblog.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }} [skip ci]"
 
-root: /blog/
+root: /newblog/
 permalink: :title/
 permalink_defaults: 
 
