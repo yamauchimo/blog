@@ -58,7 +58,8 @@ IISREST コマンドの実施中は、ユーザーがサイトにアクセス出
 1. SharePoint サーバー上で動作している SharePoint Timer Service を停止します。
     - 1-1) [管理ツール] から [サービス] を起動します。
     - 1-2) サービスの一覧から、"SharePoint Timer Service" を右クリックして、さらに [停止] をクリックします。
-  ![SharePoint Timer Service の停止](./clear-configcache/01_stop-timer-service.png)
+
+    ![SharePoint Timer Service の停止](./clear-configcache/01_stop-timer-service.png)
 
 2. SharePoint サーバーのローカルのファイル システムに保存されている構成キャッシュ ファイルを削除します。
     - 2-1) レジストリ エディターを起動します。
@@ -75,30 +76,33 @@ IISREST コマンドの実施中は、ユーザーがサイトにアクセス出
         `%ALLUSERSPROFILE%\Microsoft\SharePoint\Config\<上記手順 2-2 で確認したレジストリの値>`
         
         例) `C:\ProgramData\Microsoft\SharePoint\Config\0ae0b94c-5232-4ba9-add3-2b61d7deb90`
+
         ![構成キャッシュのフォルダ](./clear-configcache/03_config_cache_folder.png)
 
-    - 2-3) 上記のフォルダ内の XML ファイルを全て削除します。なお、この際に、同フォルダ内に存在する cache.ini ファイルを誤って削除しないように注意します。
-    - 2-4) XML ファイルの削除後、cache.ini ファイルをメモ帳で開きます。
-    - 2-5) cache.ini ファイル内の 1 行目の数値を 1 に変更し、上書き保存をしてファイルを閉じます。
+    - 2-4) 上記のフォルダ内の XML ファイルを全て削除します。なお、この際に、同フォルダ内に存在する cache.ini ファイルを誤って削除しないように注意します。
+    - 2-5) XML ファイルの削除後、cache.ini ファイルをメモ帳で開きます。
+    - 2-6) cache.ini ファイル内の 1 行目の数値を 1 に変更し、上書き保存をしてファイルを閉じます。
+
         ![cache.ini の編集前](./clear-configcache/04_cache_ini_before.png)
         ![cache.ini の編集後](./clear-configcache/05_cache_ini_after.png)
 
 3. 停止した SharePoint Timer Service を再開します。
     - 3-1) [管理ツール] から [サービス] を起動します。
     - 3-2 サービスの一覧から、"SharePoint Timer Service" を右クリックして、さらに [開始] をクリックします。
+
         ![SharePoint Timer Service の再開](./clear-configcache/06_start-timer-service.png)
 
-4. ご利用の SharePoint Server 製品が SharePoint Server 2016 の場合、IIS の再起動を行います。
-    - 4-1) コマンド プロンプトを管理者権限で起動します。
-    - 4-2) `iisreset /noforce` コマンドを実行し、IIS の再起動を行います。
-
-        *※IIS の再起動が完了するまで、一時的にユーザーがサイトにアクセス出来なくなるため、ご注意ください。*
-
-5. 動作確認を行います。
-    - 5-1) 手順 2.3 で移動した構成キャッシュのフォルダ上に、再度 XML ファイルが再作成されていることを確認します。
-    - 5-2) cache.ini ファイルを開き、1 以外の数値となっていることを確認します。
+4. 構成キャッシュの再作成が行われていることを確認します。
+    - 4-1) 手順 2-3 で移動した構成キャッシュのフォルダ上に、再度 XML ファイルが再作成されていることを確認します。
+    - 4-2) cache.ini ファイルを開き、1 以外の数値となっていることを確認します。
 
         ※SharePoint Timer Service の再起動後、数分間は cache.ini がロックされた状態になります。その場合は少し時間を空けてから再度ご確認ください。
+
+5. IIS の再起動を行います。
+    - 5-1) コマンド プロンプトを管理者権限で起動します。
+    - 5-2) `iisreset /noforce` コマンドを実行し、IIS の再起動を行います。
+
+        *※IIS の再起動が完了するまで、一時的にユーザーがサイトにアクセス出来なくなるため、ご注意ください。*
 
 ***
 
@@ -134,21 +138,21 @@ IISREST コマンドの実施中は、ユーザーがサイトにアクセス出
 
     - 1-4) スクリプトの実行時に、下記のようなメッセージが管理シェル上に出力され構成キャッシュが削除されます。
 
-        ※SharePoint Server 2016 の場合、最後に IIS の再起動を促すメッセージ (Run 'iisreset /noforce' manually.) が表示されます。
+        ※最後に IIS の再起動を促すメッセージ (Run 'iisreset /noforce' manually.) が表示されますが、このタイミングでは IIS の再起動は行われておりません。
 
-        >  Stop SharPoint Timer Service.
-        >  Succeeded to stop SharPoint Timer Service.
-        >  Clear configuration cache files of 'SharePoint_Config' (\<GUID\>).
-        >  Delete 1807 XML files.
+        >  Stopping SharePoint Timer Service ...
+        >  Succeeded to stop SharePoint Timer Service.
+        >  Clearing configuration cache files of 'SharePoint_Config' (\<GUID\>) ...
+        >  Deleting \<number of XML files\> XML files ...
         >  Deleted.
-        >  Modifiy cache.ini file.
+        >  Modifying cache.ini file ...
         >  Succeeded to modify cache.ini file.
         >  Succeeded to clear configuration cache files of 'SharePoint_Config' (\<GUID\>).
-        >  Restart SharPoint Timer Service.
-        >  Succeeded to restart SharPoint Timer Service.
+        >  Restarting SharePoint Timer Service ...
+        >  Succeeded to restart SharePoint Timer Service.
         >  Run 'iisreset /noforce' manually.
 
-2. ご利用の SharePoint Server 製品が SharePoint Server 2016 の場合、IIS の再起動を行います。
+2. IIS の再起動を行います。
     - 2-1) コマンド プロンプトを管理者権限で起動します。
     - 2-2) `iisreset /noforce` コマンドを実行し、IIS の再起動を行います。
 
