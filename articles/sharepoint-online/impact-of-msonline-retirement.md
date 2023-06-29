@@ -8,6 +8,9 @@ tags:
 この投稿では、MSOnline モジュールの廃止に伴う SharePoint アドインへの影響について記載します。
 多くの場合は代替コマンドでご対応いただくことが出来ますが、特定の運用方法をご利用の場合（特にアプリケーション プロバイダーとして複数テナントにストアを介さずに SharePoint アドインを配布している場合）は、ご自身のアドインが影響を受けないか今一度ご確認ください。
 
+※ 2023 年 6 月 29 日 更新
+MS Online モジュールの非推奨の期限が 2024 年 3 月 30 日 に延期されました。詳細につきましては、Azure Active Directory Identity Blog で公開された [Important: Azure AD Graph Retirement and Powershell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270) をご確認くださいますようお願いいたします。
+
 ## MSOnline モジュールの廃止後の SharePoint アドインのクライアント シークレットの更新方法
 
 組織のアプリ カタログもしくは AppRegNew.aspx ページを使用して登録した SharePoint アドインのクライアント シークレットは、以下の公開情報に記載の [New-MsolServicePrincipalCredential](https://learn.microsoft.com/ja-jp/powershell/module/msonline/new-msolserviceprincipalcredential?view=azureadps-1.0) コマンドで更新することが出来ました。
@@ -18,7 +21,7 @@ tags:
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret -StartDate $dtStart -EndDate $dtEnd
 ```
 
-しかしながら、MSOnline モジュールは 2023 年 6 月 30 日に廃止される予定であり、これに伴い New-MsolServicePrincipalCredential コマンドも利用できなくなります。（MSOnline モジュールの廃止につきましては、こちらの[ブログ](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/azure-ad-change-management-simplified/ba-p/2967456)をご参照ください。）
+しかしながら、MSOnline モジュールは 2024 年 4 月 30 日に非推奨とされ、その後、廃止される予定であり、これに伴い New-MsolServicePrincipalCredential コマンドも利用できなくなります。（MSOnline モジュールの廃止につきましては、こちらの[ブログ](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270)をご参照ください。）
 
 MSOnline モジュールの廃止後は、Microsoft Graph PowerShell モジュールの New-MsolServicePrincipalCredential コマンドの代替コマンドとして [Add-MgServicePrincipalPassword](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.applications/add-mgserviceprincipalpassword?view=graph-powershell-1.0) コマンドでクライアント シークレットを更新いただけます。
 
