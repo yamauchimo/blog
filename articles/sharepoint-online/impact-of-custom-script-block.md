@@ -36,7 +36,7 @@ CSPCONTAINER#0 = CSP コンテナー
 ## 注意事項 (例外)
 カスタム スクリプトのブロック後も、OneDrive サイトと SharePoint サイトの既存ページのスクリプトの実行は一般的に影響を受けません。  
 しかしながら、SharePoint Framework ソリューションにおいて、マニフェストで requiresCustomScript プロパティを True に設定している場合、カスタム スクリプトのブロックによりソリューションが動作しなくなることを確認しております。requiresCustomScript プロパティが True に設定されているソリューションの一例として、[PnP の Modern Script Editor Web Part](https://github.com/pnp/sp-dev-fx-webparts/blob/main/samples/react-script-editor/README.md) があります。
-requiresCustomScript プロパティが Ture に設定された SharePoint Framework ソリューションをご利用の場合は、ブロックの期限が迫っておりますので、カスタム スクリプトの無効化適用をあらかじめ延長することをご検討くださいますようお願いいたします。
+requiresCustomScript プロパティが True に設定された SharePoint Framework ソリューションをご利用の場合は、ブロックの期限が迫っておりますので、カスタム スクリプトの無効化適用をあらかじめ延長することをご検討くださいますようお願いいたします。
 
 なお、この問題については、2024 年 4 月 10 日現在、開発部門にて調査が進められております。調査の進展があり次第、本記事を更新いたします。
 
