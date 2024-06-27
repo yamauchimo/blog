@@ -290,7 +290,6 @@ Azure 仮想マシンの OS ディスク エクスポート URL を生成し、�
 > **事前準備**  
 >ストレージ アカウントを作成し、[Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) をインストールします。  
 >　参考 : [Azure Storage アカウントを作成する | Azure ストレージ](https://learn.microsoft.com/ja-jp/azure/storage/common/storage-account-create?tabs=azure-portal)
----
 
 1 ) Azure portal で仮想マシンを開き、OS ディスクのダウンロード URL を生成します。ここで生成した URL は、azcopy 実行時に使用します。  
 手順については、以下の公開情報をご参照ください。
