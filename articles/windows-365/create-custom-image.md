@@ -13,9 +13,9 @@ Windows 365 では、イメージを作成してカスタム イメージとし�
 ### 目次
 1. [留意点](#1-留意点)
 2. [カスタム イメージ作成手順](#2-カスタム-イメージ作成手順)
-   - [方法 1. Azure Virtual Machine (Standard 起動) で作成](#方法-1-azure-virtual-machine-standard-起動-で作成)
-   - [方法 2. Hyper-V の仮想マシンで作成](#方法-2-hyper-v-の仮想マシンで作成)
-   - [番外編. Azure Virtual Machine (トラステッド起動) で作成](#番外編-azure-virtual-machine-トラステッド起動-で作成)
+   - 方法 1. Azure Virtual Machine (Standard 起動) で作成
+   - 方法 2. Hyper-V の仮想マシンで作成]
+   - 番外編. Azure Virtual Machine (トラステッド起動) で作成]
 3. [補足](#3-補足)
 
 ## 1. 留意点
