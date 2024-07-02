@@ -80,6 +80,16 @@ Windows 11 のシステム要件、仮想マシンのサポート要件につい
 方法 2. Hyper-V の仮想マシンで作成  
 番外編. Azure Virtual Machine (トラステッド起動) で作成  
 
+#### 作成方法の比較 
+| 方法  | 仮想マシン | イメージ元 | イメージの最適化 | Teams の最適化 | イメージ化 | Azure ストレージ アカウント | クラウド PC 再起動 (プロビジョニング後) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 方法 1 | Azure VM (Standard 起動) | ギャラリー イメージ | - | 必要 * | Azure VM のキャプチャ | - | 必要 |
+| 方法 2 | Hyper-V | ISO ファイル| 必要 | 必要 | Azure イメージ サービス | 必要 | - |
+| 番外編 | Azure VM (TPM 起動) | ギャラリー イメージ | - | 必要 * | Azure イメージ サービス | 必要 | - |
+
+\* Microsoft 365 Apps を含むギャラリー イメージ を使用する場合は不要
+
+#### 作成方法
 <details>
 <summary>方法 1. Azure Virtual Machine (Standard 起動) で作成</summary>
 
