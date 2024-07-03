@@ -84,7 +84,7 @@ Windows 11 のシステム要件、仮想マシンのサポート要件につい
 ![](./create-custom-image/compare.png)
 ※ Microsoft 365 Apps を含むギャラリー イメージ を使用する場合は不要
 
-### 作成方法
+#### 作成方法
 <details>
 <summary>方法 1. Azure Virtual Machine (Standard 起動) で作成</summary>
 
