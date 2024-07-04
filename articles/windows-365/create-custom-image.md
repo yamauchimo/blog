@@ -6,6 +6,8 @@ tags:
 ---
 
 # Windows 365 カスタム イメージの作成方法
+>Windows 365 の過去のサポート ブログ記事は、[こちらから](https://jpmem.github.io/blog/tags/Windows-365/)ご覧ください。
+
 本記事では、Windows 365 クラウド PC のカスタム イメージ作成方法について記載します。  
 Windows 365 では、イメージを作成してカスタム イメージとして Intune にアップロードし、クラウド PC のプロビジョニングに使用することが可能です。イメージ元には、Azure Virtual Machine (以下、Azure VM) または Hyper-V 上の仮想マシンを使用します。
 
