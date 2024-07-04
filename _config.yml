@@ -12,6 +12,7 @@ keywords:
   - SharePoint Online
   - SharePoint Server
   - OneDrive for Business
+  - Windows 365
 
 author: SharePoint Support Japan
 
@@ -21,6 +22,7 @@ root_tag_generator:
     - SharePoint Online
     - SharePoint Server
     - OneDrive for Business
+    - Windows 365
   sub_tag_limit: 20
 
 # URL
