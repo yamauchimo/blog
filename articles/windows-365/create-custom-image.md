@@ -1,6 +1,6 @@
 ---
 title: Windows 365 カスタム イメージの作成方法
-date: 2024-06-27
+date: 2024-07-03
 tags:
   - windows 365
 ---
