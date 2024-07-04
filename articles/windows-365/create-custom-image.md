@@ -1,6 +1,6 @@
 ---
 title: Windows 365 カスタム イメージの作成方法
-date: 2024-06-27
+date: 2024-07-03
 tags:
   - windows 365
 ---
@@ -86,7 +86,7 @@ Windows 11 のシステム要件、仮想マシンのサポート要件につい
 ![](./create-custom-image/compare.png)
 ※ Microsoft 365 Apps を含むギャラリー イメージ を使用する場合は不要
 
-### 作成方法
+#### 作成方法
 <details>
 <summary>方法 1. Azure Virtual Machine (Standard 起動) で作成</summary>
 
