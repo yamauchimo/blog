@@ -1,6 +1,6 @@
 ---
 title: (MC714186) カスタム スクリプトのブロックによる影響について
-date: 2024-04-10
+date: 2024-09-02
 tags:
   - SharePoint Online
 ---
@@ -25,20 +25,30 @@ SharePoint サイトでは、管理者がカスタム スクリプトの実行�
 
 (※3) カスタム スクリプトの無効化は、2024 年 4 月下旬に開始され、5 月上旬までに完了する予定です。最新の展開状況は[メッセージ センターの MC714186](https://admin.microsoft.com/Adminportal/Home#/MessageCenter/:/messages/MC714186) をご確認ください。
 
-(※4) カスタム スクリプトの無効化は、以下のサイト テンプレートを除くすべての既存の SharePoint サイトと OneDrive サイトに適用されます。  
+(※4) カスタム スクリプトの無効化は、以下のサイト テンプレートを除くすべての既存の SharePoint サイトと OneDrive サイトに適用されます。
+
 BLANKINTERNETCONTAINER#0 = 従来の発行ポータル サイト  
 CMSPUBLISHING#0 = 公開サイト  
-BLANKINTERNET#0 = 発行サイト  
-GROUP#0 = チーム サイト  
+BLANKINTERNET#0 = 発行サイト    
+~~GROUP#0 = チーム サイト~~
 APPCATALOG#0 = アプリ・カタログ  
 CSPCONTAINER#0 = CSP コンテナー  
+
+※ 2024 年 8 月 28 日 更新
+カスタム スクリプトの無効化の対象外のサイト テンプレートから「GROUP#0 = チーム サイト」が除外されました。
+「GROUP#0 = チーム サイト」は MC714186 の変更によりカスタム スクリプトが無効化されます。
 
 ## 注意事項 (例外)
 カスタム スクリプトのブロック後も、OneDrive サイトと SharePoint サイトの既存ページのスクリプトの実行は一般的に影響を受けません。  
 しかしながら、SharePoint Framework ソリューションにおいて、マニフェストで requiresCustomScript プロパティを True に設定している場合、カスタム スクリプトのブロックによりソリューションが動作しなくなることを確認しております。requiresCustomScript プロパティが True に設定されているソリューションの一例として、PnP の Modern Script Editor Web Part (https://github.com/pnp/sp-dev-fx-webparts/blob/main/samples/react-script-editor/README.md) があります。
 requiresCustomScript プロパティが True に設定された SharePoint Framework ソリューションをご利用の場合は、ブロックの期限が迫っておりますので、カスタム スクリプトの無効化適用をあらかじめ延長することをご検討くださいますようお願いいたします。
 
-なお、この問題については、2024 年 4 月 10 日現在、開発部門にて調査が進められております。調査の進展があり次第、本記事を更新いたします。
+~~なお、この問題については、2024 年 4 月 10 日現在、開発部門にて調査が進められております。調査の進展があり次第、本記事を更新いたします。~~
+
+※ 2024 年 9 月 2 日 更新
+上記は製品の想定動作であり、今後、カスタム スクリプトがブロックされているサイトでは、requiresCustomScript プロパティが True に設定されている SharePoint Framework ソリューションは動作しませんので、ご留意ください。
+この内容は以下の公開情報にも掲載されています。
+[カスタム スクリプトを許可または禁止する - SharePoint in Microsoft 365 | Microsoft Learn](https://learn.microsoft.com/ja-jp/sharepoint/allow-or-prevent-custom-script#features-affected-when-custom-script-is-blocked)
 
 (*) requiresCustomScript プロパティの設定例が掲載された公開情報
 https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part#web-part-manifest
