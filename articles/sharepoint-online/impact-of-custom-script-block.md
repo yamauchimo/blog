@@ -41,7 +41,10 @@ CSPCONTAINER#0 = CSP コンテナー
 ## 注意事項 (例外)
 カスタム スクリプトのブロック後も、OneDrive サイトと SharePoint サイトの既存ページのスクリプトの実行は一般的に影響を受けません。  
 しかしながら、SharePoint Framework ソリューションにおいて、マニフェストで requiresCustomScript プロパティを True に設定している場合、カスタム スクリプトのブロックによりソリューションが動作しなくなることを確認しております。requiresCustomScript プロパティが True に設定されているソリューションの一例として、PnP の Modern Script Editor Web Part (https://github.com/pnp/sp-dev-fx-webparts/blob/main/samples/react-script-editor/README.md) があります。
-requiresCustomScript プロパティが True に設定された SharePoint Framework ソリューションをご利用の場合は、ブロックの期限が迫っておりますので、カスタム スクリプトの無効化適用をあらかじめ延長することをご検討くださいますようお願いいたします。
+~~requiresCustomScript プロパティが True に設定された SharePoint Framework ソリューションをご利用の場合は、ブロックの期限が迫っておりますので、カスタム スクリプトの無効化適用をあらかじめ延長することをご検討くださいますようお願いいたします。~~
+
+※ 2024 年 11 月 19 日 更新
+カスタム スクリプトの無効化の延長は 2024 年 11 月中旬までとなります。requiresCustomScript プロパティが True に設定された SharePoint Framework ソリューションをご利用の場合は、requiresCustomScript プロパティを Flase に変更してソリューションを再追加するか、ソリューション利用時のみ一時的にカスタム スクリプトを有効化することをご検討くださいますようお願いいたします。
 
 ~~なお、この問題については、2024 年 4 月 10 日現在、開発部門にて調査が進められております。調査の進展があり次第、本記事を更新いたします。~~
 
@@ -54,12 +57,14 @@ requiresCustomScript プロパティが True に設定された SharePoint Frame
 https://learn.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part#web-part-manifest
 
 ## カスタム スクリプトの無効化の延長について
-カスタム スクリプトの無効化を遅らせるための SharePoint 管理シェル コマンド DelayDenyAddAndCustomizePagesEnforcement が 4 月中旬までに展開されます。
-SharePoint 管理者もしくは全体管理者で以下のコマンドを実行することで、カスタム スクリプトの無効化を 2024 年 11 月中旬まで遅らせることが可能です。
-``` PowerShell
-Set-SPOTenant -DelayDenyAddAndCustomizePagesEnforcement $True
-```
+~~カスタム スクリプトの無効化を遅らせるための SharePoint 管理シェル コマンド DelayDenyAddAndCustomizePagesEnforcement が 4 月中旬までに展開されます。~~
+~~SharePoint 管理者もしくは全体管理者で以下のコマンドを実行することで、カスタム スクリプトの無効化を 2024 年 11 月中旬まで遅らせることが可能です。~~
+<!-- ``` PowerShell -->
+~~Set-SPOTenant -DelayDenyAddAndCustomizePagesEnforcement $True~~
+<!-- ``` -->
 
+※ 2024 年 11 月 19 日 更新
+カスタム スクリプトの無効化を遅らせるための SharePoint 管理シェル コマンド DelayDenyAddAndCustomizePagesEnforcement による延長は 2024 年 11 月中旬までとなります。以降は、カスタム スクリプトの有効化後、24 時間経過後に再び自動で無効化されます。
 
 今回の投稿は以上です。
 不明な点などがありましたら、弊社サポートサービスまでお気軽にお問い合わせください。
