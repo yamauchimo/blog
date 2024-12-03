@@ -17,7 +17,7 @@ SharePoint Support チームのブログです。
   - Microsoft Stream
 
 なお、本ブログは弊社の公式見解ではなく、予告なく変更される場合があります。
-もし公式な見解が必要な場合は、弊社ドキュメント (https://docs.microsoft.com/ や https://support.microsoft.com) をご参照いただく、もしくは私共サポートまでお問い合わせください。
+もし公式な見解が必要な場合は、弊社ドキュメント (https://learn.microsoft.com や https://support.microsoft.com) をご参照いただく、もしくは私共サポートまでお問い合わせください。
 
 本情報が少しでも皆様のお役に立てば幸いです😊
 
@@ -27,5 +27,3 @@ SharePoint Support チームのブログです。
 元の記事の最新の更新情報については、本ブログに掲載いたします。
 
 - [以前の SharePoint サポート フォーラムの投稿](https://social.msdn.microsoft.com/Forums/ja-JP/home?forum=sharepointsupportteamja)
-- [以前の Japan SharePoint Support Team Blog](https://docs.microsoft.com/en-us/archive/blogs/sharepoint_support/)
-
