@@ -17,15 +17,15 @@ Power Automate の承認ワークフローを作成する方法は、様々な�
 ## 移行シナリオの参考情報
 SharePoint 2010 形式ワークフローからの移行を検討している方には、マイクロソフトからの公開情報としては以下のサイトをご確認いただくことをお勧めします。
 
-タイトル : Microsoft SharePoint Connector in Power 自動
+タイトル : Power Automate の Microsoft SharePoint コネクタ
 アドレス : https://docs.microsoft.com/ja-jp/sharepoint/dev/business-apps/power-automate/sharepoint-connector-actions-triggers
 
-タイトル : Power 自動化を使用して SharePoint でドキュメントの承認を必須にする
+タイトル : Power Automate を使用して SharePoint でドキュメントの承認を要求する
 アドレス : https://docs.microsoft.com/ja-jp/sharepoint/dev/business-apps/power-automate/guidance/require-doc-approval
 
 下記サイトには、SharePoint ワークフローと Power Automate の機能の対比表が含まれています。
 
-タイトル : ガイダンス: SharePoint で従来のワークフローからパワー自動化フローに移行する
+タイトル : ガイダンス: SharePoint で従来のワークフローから Power Automate フローに移行する
 アドレス : https://docs.microsoft.com/ja-jp/sharepoint/dev/business-apps/power-automate/guidance/migrate-from-classic-workflows-to-power-automate-flows
 
 ## ウォークスルー
