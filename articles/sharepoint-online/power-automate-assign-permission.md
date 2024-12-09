@@ -17,8 +17,8 @@ tags:
 
 公開情報には、アイテムまたはフォルダーへのアクセスを許可する、中止するといったアクションに対して、条件付きで可能との記載があります。
 
-タイトル : Guidance: Migrate from classic workflows to Power Automate flows in SharePoint
-アドレス : https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/migrate-from-classic-workflows-to-power-automate-flows
+タイトル : ガイダンス: SharePoint で従来のワークフローから Power Automate フローに移行する
+アドレス : https://learn.microsoft.com/ja-jp/sharepoint/dev/business-apps/power-automate/guidance/migrate-from-classic-workflows-to-power-automate-flows
 
 ![PublicArticle](./power-automate-assign-permission/PAPERM00.png)
 
