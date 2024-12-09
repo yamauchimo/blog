@@ -26,4 +26,5 @@ SharePoint Support チームのブログです。
 過去の記事を参照いただく際は、それぞれのリンク先から検索ください。
 元の記事の最新の更新情報については、本ブログに掲載いたします。
 
-- [以前の SharePoint サポート フォーラムの投稿](https://social.msdn.microsoft.com/Forums/ja-JP/home?forum=sharepointsupportteamja)
+Blog Archive : Japan SharePoint Support Team Blog
+https://learn.microsoft.com/ja-jp/archive/blogs/sharepoint_support/
