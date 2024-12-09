@@ -7,7 +7,7 @@ tags:
 
 # HTTP 調整のリトライロジックのテスト方法
 
-# 背景
+## 背景
 HTTP 調整リトライ ロジックを実装した際に、特に弊社公開記事に記載されたカスタムコードを変更している場合は、論理テストを実施していただく必要があります。
 
 残念ながら、SharePoint Online に対して明示的に調整を発生させることはできないため、現実的なシナリオに即したテストなどを実施することはできません。
@@ -16,7 +16,7 @@ HTTP 調整リトライ ロジックを実装した際に、特に弊社公開�
 
 今回の記事では、その疑似的な論理テストを実施する方法の 1 つをご紹介します。
 
-# 対処策
+## 対処策
 Fiddler の AutoResponder を使用して、CSOM などの通信に対して、任意の HTTP 応答を返して動作検証する方法があります。
 
 まず、Fiddler を起動し、トレースを取得しておきます。
@@ -49,16 +49,10 @@ Fiddler の AutoResponder を使用して、CSOM などの通信に対して、�
 
 ![Fiddler4](./Testing-backoff-logic/Fiddler4.png)
 
-# 参考リンク
+## 参考リンク
 
 タイトル : SharePoint Online で調整またはブロックを回避する方法
 アドレス : https://docs.microsoft.com/ja-jp/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online
-
-タイトル : SharePoint Online の HTTP 調整 (応答コード 429, 503) に関して
-アドレス : https://social.msdn.microsoft.com/Forums/ja-JP/8e5a4116-c96a-4d3e-9bbf-6efb852b5d88/sharepoint-online-12398-http-3551925972-2454031572124671254012489-429-503?forum=sharepointsupportteamja
-
-タイトル : [再改訂版] SharePoint Online HTTP 調整 (応答コード : 429) 対策の増分バックオフ リトライ
-アドレス : https://social.msdn.microsoft.com/Forums/sqlserver/ja-JP/21e2a628-44be-4541-bca9-b81c484ff59b/20877259133533029256-sharepoint-online-http-3551925972?forum=sharepointsupportteamja
 
 タイトル : jpspsupport/CSOMRetrySample
 アドレス : https://github.com/jpspsupport/CSOMRetrySample
