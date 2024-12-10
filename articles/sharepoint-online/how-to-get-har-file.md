@@ -8,7 +8,7 @@ tags:
 
 <!-- more -->
 
->**注意**
+>**NOTE**
 >- 本記事では Microsoft Edge での操作手順を説明します。
 >- 具体的な採取対象や手順は、お問い合わせ内容や事象によって異なる場合があります。
 >   - 本手順は基本的な参考資料としてご活用ください。
@@ -50,11 +50,11 @@ while ($true) {
     Start-Sleep -Seconds 1
 }
 ```
-![Get-Date コマンド入力例](/sharepoint-online/how-to-get-har-file/ps-get-date01.png)
+![Get-Date コマンド入力例](./how-to-get-har-file/ps-get-date01.png)
 
 3. 秒単位の時刻が PowerShell 上に表示されます。
 
-![Get-Date コマンド結果](/sharepoint-online/how-to-get-har-file/ps-get-date02.png)
+![Get-Date コマンド結果](./how-to-get-har-file/ps-get-date02.png)
 
 ### 事前準備 2 (開発者ツールの設定) 
 
@@ -63,7 +63,7 @@ while ($true) {
 3. ブラウザー上で [F12] キーを押します。Developer Tool が起動します。
 4. 画面右上の三点リーダーから設定を開きます。
 
-![F12 開発者ツール 設定](/sharepoint-online/how-to-get-har-file/f12settings01.png)
+![F12 開発者ツール 設定](./how-to-get-har-file/f12settings01.png)
 
 5. 次の項目にチェックを入れます。
 
@@ -71,29 +71,24 @@ while ($true) {
 セクション：ネットワーク
 項目　　　：Allow to generate 'HAR' with sensitive data
 
-![F12 開発者ツール 基本設定](/sharepoint-online/how-to-get-har-file/f12settings02.png)
+![F12 開発者ツール 基本設定](./how-to-get-har-file/f12settings02.png)
 
 **■ コンソール ログも取得する場合**
 セクション：コンソール
 項目　　　：タイムスタンプ / Timestamps
 
-![F12 開発者ツール コンソール設定](/sharepoint-online/how-to-get-har-file/f12settings03.png)
+![F12 開発者ツール コンソール設定](./how-to-get-har-file/f12settings03.png)
 
 6. 設定画面を右上の×ボタンで閉じた後、ブラウザーを終了します。
 
->**TIP**
+>**補足**
 >Chromium 130 以降から、機密情報を含む可能性がある Cookie や Authorization ヘッダーの情報が、既定で HAR ファイルから除外されるようになりました。本設定をオンにすることで、Cookie や Authorization ヘッダーの情報を HAR ファイルにエクスポートできるようになります。
 >
 
 ## 取得手順
   
 #### <u>1. 録画の開始</u>
-Snipping Tool または PowerPoint を使って動画の録画を開始します。
-
->**注意**
->- お使いのバージョンによって、若干メニューが異なる場合があります。
->- Windows 10 の Snipping Tool には録画機能がありません。Windows 10 の場合は PowerPoint をお使いください。
->      
+Snipping Tool または PowerPoint を使って動画の録画を開始します。   
 
 <details>
 <summary>Snipping Tool の場合（Windows 11 の場合のみ）</summary>
@@ -102,13 +97,13 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 スタート メニュー > 検索バーで "Snipping" と入力しアプリを検索してください。
 2. 画面上部のビデオアイコンをクリックして、録画モードに変更します。
 
-![Recording Mode](/sharepoint-online/how-to-get-har-file/snippingtool01.png)
+![Snipping Tool 録画モード](./how-to-get-har-file/snippingtool01.png)
 
 3. [＋新規] ボタンをクリックし、録画領域を選択します。
 ブラウザー全体および PowerShell の時刻表示が確認できるよう範囲を選択してください。
 4. [スタート] ボタンをクリックします。
 
-![Start](/sharepoint-online/how-to-get-har-file/snippingtool02.png) 
+![Snipping Tool 録画スタート ボタン](./how-to-get-har-file/snippingtool02.png) 
 </details>
 
 <details>
@@ -117,17 +112,20 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 1. 事象発生端末にて PowerPoint を開き、新しいプレゼンテーションを選びます。
 2. [挿入] タブ > [メディア] > [画面録画] ボタンをクリックします。
 
-![PowerPoint 録画ボタン1](/sharepoint-online/how-to-get-har-file/ppt-recording01.png) 
+![PowerPoint 録画ボタン1](./how-to-get-har-file/ppt-recording01.png) 
 
 3. 画面上部のメニューから [領域の選択] をクリックし、録画領域を選択します。ブラウザー全体および PowerShell の時刻表示が確認できるよう範囲を選択してください。
 
-![PowerPoint 録画領域の選択](/sharepoint-online/how-to-get-har-file/ppt-recording02.png)
+![PowerPoint 録画領域の選択](./how-to-get-har-file/ppt-recording02.png)
 
 4. [録画] ボタンをクリックします。
 
-![PowerPoint 録画ボタン2](/sharepoint-online/how-to-get-har-file/ppt-recording03.png)
+![PowerPoint 録画ボタン2](./how-to-get-har-file/ppt-recording03.png)
 </details>
 
+>**NOTE**
+>- お使いのバージョンによって、若干メニューが異なる場合があります。
+>- Windows 10 の Snipping Tool には録画機能がありません。Windows 10 の場合は PowerPoint をお使いください。
 
 #### <u>2. ネットワーク トレース ログの取得</u>
 1. Microsoft Edge を起動します。
@@ -141,28 +139,21 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
    - 赤色は記録が開始されていることを示します
    - ボタンがグレーの場合は記録が停止していますので、ボタンをクリックしてアクティブ（赤色）にしてください
 
-![ネットワーク トレース ログの取得](/sharepoint-online/how-to-get-har-file/networktrace01.png)
+![ネットワーク トレース ログの取得](./how-to-get-har-file/networktrace01.png)
 
 9. 開発者ツールを開いているタブ上で事象が発生するサイトにアクセスし、事象を再現します。
-
->**注意**
->- 別のタブでアクセスするとログが記録されません。
->- タブが遷移する事象はログを記録できない場合があります。
-
 10. 事象の再現が完了したら、[ネットワーク ログの記録] アイコンをクリックして記録を停止します。
 11. [HAR のエクスポート] アイコンを長押しします。
 12. [HAR のエクスポート (機密データを含む) / Export HAR (With sensitive data)] を選択します。
-
-![Export HAR file ](/sharepoint-online/how-to-get-har-file/networktrace02.png)
-
->**TIP**
->[HAR のエクスポート (機密データを含む)] を選択することで、Cookie や Authorization ヘッダーの情報を HAR ファイルにエクスポートできます。
-
->**注意**
->長押しで当該メニューが表示されない場合、事前準備２を実施していない可能性があります。
->設定を確認の上、もう一度、ログを採取し直してください。
-
 13. 任意の場所に HAR ファイルを保存します。
+
+![Export HAR file ](./how-to-get-har-file/networktrace02.png)
+
+>**NOTE**
+>- 別のタブでアクセスするとログが記録されません。
+>- タブが遷移する事象はログを記録できない場合があります。
+>- [HAR のエクスポート (機密データを含む)] を選択することで、Cookie や Authorization ヘッダーの情報を HAR ファイルにエクスポートできます。
+>- 長押しで当該メニューが表示されない場合、事前準備２を実施していない可能性があります。設定を確認の上、もう一度、ログを採取し直してください。
 
 #### <u>3. コンソールログの取得</u>
 コンソール ログを採取することで、JavaScript などのクライアント サイド スクリプトのエラーを確認することができます。
@@ -170,7 +161,7 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 2. コンソール内に、事象の再現中に出力されたエラー、警告、または情報メッセージが記録されていることを確認します。
 3. コンソール内を右クリックし、[名前を付けて保存... / Save as]を選択します。
 任意の場所にコンソール ログをテキスト形式で保存します。<br>
-![Save as Console log ](/sharepoint-online/how-to-get-har-file/consolelog.png)
+![コンソール ログの保存 ](./how-to-get-har-file/consolelog.png)
 
 #### <u>4. 録画の停止</u>
 録画を停止します。
@@ -180,17 +171,17 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 
 1. 画面上部の録画停止ボタンをクリックします。
 
-![Snipping Tool の録画停止ボタン](/sharepoint-online/how-to-get-har-file/snippingtool03.png) 
+![Snipping Tool の録画停止ボタン](./how-to-get-har-file/snippingtool03.png) 
 2. 動画ファイルは既定では自動保存されます。
 保存場所は、画面右上の三点リーダー […] ＞設定から [画面録画の保存先] をご確認ください。<br>
-![Snipping Tool のデータ保存場所の確認](/sharepoint-online/how-to-get-har-file/snippingtool04.png) 
+![Snipping Tool のデータ保存場所の確認](./how-to-get-har-file/snippingtool04.png) 
 </details>
 
 <details>
 <summary>PowerPoint の場合</summary>
 
 1. 画面上部の停止ボタンをクリックします。<br>
-![PowerPoint 録画停止ボタン](/sharepoint-online/how-to-get-har-file/ppt-recording04.png) 
+![PowerPoint 録画停止ボタン](./how-to-get-har-file/ppt-recording04.png) 
 2. スライドに動画が貼り付けられますので、PowerPoint ファイルを任意の場所に保存します。
 </details>
 
