@@ -114,7 +114,8 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 
 ![PowerPoint 録画ボタン1](./how-to-get-har-file/ppt-recording01.png) 
 
-3. 画面上部のメニューから [領域の選択] をクリックし、録画領域を選択します。ブラウザー全体および PowerShell の時刻表示が確認できるよう範囲を選択してください。
+3. 画面上部のメニューから [領域の選択] をクリックし、録画領域を選択します。
+ブラウザー全体および PowerShell の時刻表示が確認できるよう範囲を選択してください。
 
 ![PowerPoint 録画領域の選択](./how-to-get-har-file/ppt-recording02.png)
 
@@ -145,9 +146,10 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 10. 事象の再現が完了したら、[ネットワーク ログの記録] アイコンをクリックして記録を停止します。
 11. [HAR のエクスポート] アイコンを長押しします。
 12. [HAR のエクスポート (機密データを含む) / Export HAR (With sensitive data)] を選択します。
-13. 任意の場所に HAR ファイルを保存します。
 
 ![Export HAR file ](./how-to-get-har-file/networktrace02.png)
+
+13. 任意の場所に HAR ファイルを保存します。
 
 >**NOTE**
 >- 別のタブでアクセスするとログが記録されません。
@@ -190,8 +192,7 @@ Snipping Tool または PowerPoint を使って動画の録画を開始します
 2. 事前準備 2 で 「HAR (センシティブ データを含む) の生成を許可する / Allow to genarate 'HAR' with sensitive data」にチェックを入れた場合は、HAR ファイル取得後にチェックをオフにします。
 
 
-手順は以上となります。
-
+手順は以上となります。<br><br>
 
 ## 参考公開情報
 [ネットワーク トレースの収集方法 | Microsoft Learn](https://learn.microsoft.com/ja-jp/azure/azure-web-pubsub/howto-troubleshoot-network-trace#collect-a-network-trace-in-the-browser-browser-based-apps-only)
